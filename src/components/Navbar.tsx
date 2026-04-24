@@ -15,7 +15,7 @@ export default function Navbar() {
         className="pointer-events-auto"
       >
         <a href="/" className="font-display font-black text-2xl uppercase tracking-tighter leading-none border-b-4 border-yellow-400">
-          TEGAR / SEPTIADY
+          PRANAV KAKKAR
         </a>
       </motion.div>
       

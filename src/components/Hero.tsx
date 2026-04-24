@@ -1,6 +1,11 @@
 import { motion } from 'motion/react';
 
-export default function Hero() {
+interface HeroProps {
+  image1?: string;
+  image2?: string;
+}
+
+export default function Hero({ image1, image2 }: HeroProps) {
   const letters = "PORTFOLIO".split("");
 
   return (
@@ -92,10 +97,18 @@ export default function Hero() {
              initial={{ scale: 0, rotate: 20 }}
              animate={{ scale: 1, rotate: 5 }}
              transition={{ delay: 0.5, type: "spring" }}
-             className="w-full aspect-square bg-zinc-900 border-4 border-white shadow-2xl relative overflow-hidden"
+             className="w-full aspect-square bg-zinc-900 border-4 border-white shadow-2xl relative overflow-hidden group"
            >
-              <div className="absolute inset-0 bg-red-600 opacity-40 mix-blend-multiply transition-all group-hover:opacity-20"></div>
-              <div className="absolute bottom-2 left-2 right-2 bg-black p-2">
+              {image1 && (
+                <img 
+                  src={image1} 
+                  alt="Work 1" 
+                  referrerPolicy="no-referrer"
+                  className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                />
+              )}
+              <div className="absolute inset-0 bg-red-600 opacity-40 mix-blend-multiply transition-all group-hover:opacity-20 z-10"></div>
+              <div className="absolute bottom-2 left-2 right-2 bg-black p-2 z-20">
                 <p className="text-[10px] uppercase font-bold tracking-widest text-white">Visual identity / Studio</p>
               </div>
            </motion.div>
@@ -103,10 +116,18 @@ export default function Hero() {
              initial={{ scale: 0, rotate: -10 }}
              animate={{ scale: 1, rotate: -3 }}
              transition={{ delay: 0.7, type: "spring" }}
-             className="w-4/5 aspect-square bg-zinc-900 border-4 border-yellow-400 shadow-2xl translate-x-12 -translate-y-20 relative overflow-hidden"
+             className="w-4/5 aspect-square bg-zinc-900 border-4 border-yellow-400 shadow-2xl translate-x-12 -translate-y-20 relative overflow-hidden group"
            >
-              <div className="absolute inset-0 bg-blue-600 opacity-40 mix-blend-multiply transition-all group-hover:opacity-20"></div>
-              <div className="absolute bottom-2 left-2 right-2 bg-black p-2">
+              {image2 && (
+                <img 
+                  src={image2} 
+                  alt="Work 2" 
+                  referrerPolicy="no-referrer"
+                  className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                />
+              )}
+              <div className="absolute inset-0 bg-blue-600 opacity-40 mix-blend-multiply transition-all group-hover:opacity-20 z-10"></div>
+              <div className="absolute bottom-2 left-2 right-2 bg-black p-2 z-20">
                 <p className="text-[10px] uppercase font-bold tracking-widest text-white">Experimental / Type</p>
               </div>
            </motion.div>

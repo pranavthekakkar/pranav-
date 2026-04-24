@@ -4,9 +4,18 @@ import { PROJECTS } from '../data';
 
 interface ProjectGridProps {
   onSelectProject: (project: Project) => void;
+  images?: string[];
 }
 
-export default function ProjectGrid({ onSelectProject }: ProjectGridProps) {
+export default function ProjectGrid({ onSelectProject, images }: ProjectGridProps) {
+  // If user provides images, we wrap them into project objects or just override existing ones
+  const displayProjects = PROJECTS.map((p, i) => ({
+    ...p,
+    thumbnail: images && images[i] ? images[i] : p.thumbnail,
+    // We should also update the first image in the detail view if index exists
+    images: images && images[i] ? [images[i], ...p.images.slice(1)] : p.images
+  }));
+
   return (
     <section id="work" className="py-24 px-6 max-w-screen-2xl mx-auto">
       <div className="flex justify-between items-baseline mb-16 px-4">
@@ -21,7 +30,7 @@ export default function ProjectGrid({ onSelectProject }: ProjectGridProps) {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 md:gap-20">
-        {PROJECTS.map((project, idx) => (
+        {displayProjects.map((project, idx) => (
           <motion.div
             key={project.id}
             initial={{ opacity: 0, y: 50, rotate: idx % 2 === 0 ? 3 : -3 }}
