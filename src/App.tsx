@@ -73,21 +73,21 @@ export default function App() {
 
           {/* FIRST PAGE */}
           <Hero 
-            image1="https://raw.githubusercontent.com/pranavthekakkar/pranav-/main/image%201.0.jpg"
-            image2="https://raw.githubusercontent.com/pranavthekakkar/pranav-/main/DSC_0003.JPG"
+            image1="https://github.com/pranavthekakkar/pranav00/blob/main/image%201.0.jpg?raw=true"
+            image2="https://github.com/pranavthekakkar/pranav00/blob/main/image%203.png?raw=true"
           />
 
           {/* SECOND PAGE */}
           <ProjectGrid 
             onSelectProject={setSelectedProject}
             images={[
-              "https://raw.githubusercontent.com/pranavthekakkar/pranav-/main/image%202.png",
-              "https://raw.githubusercontent.com/pranavthekakkar/pranav-/main/image%203.png",
-              "https://raw.githubusercontent.com/pranavthekakkar/pranav-/main/image%204.png",
-              "https://raw.githubusercontent.com/pranavthekakkar/pranav-/main/image%207.jpeg",
-              "https://raw.githubusercontent.com/pranavthekakkar/pranav-/main/image%206.jpg",
-              "https://raw.githubusercontent.com/pranavthekakkar/pranav-/main/image%207.jpeg",
-              "https://raw.githubusercontent.com/pranavthekakkar/pranav-/main/IMG_9738.jpg"
+              "https://github.com/pranavthekakkar/pranav00/blob/main/image%202.png?raw=true",
+              "https://github.com/pranavthekakkar/pranav00/blob/main/image%204.png?raw=true",
+              "https://github.com/pranavthekakkar/pranav00/blob/main/DSC_0003.JPG?raw=true",
+              "https://github.com/pranavthekakkar/pranav00/blob/main/iamge%205.jpeg?raw=true",
+              "https://github.com/pranavthekakkar/pranav00/blob/main/image%206.jpg?raw=true",
+              "https://github.com/pranavthekakkar/pranav00/blob/main/IMG_9738.jpg?raw=true",
+              "https://github.com/pranavthekakkar/pranav00/blob/main/image%207.jpeg?raw=true"
             ]}
           />
 
