@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Mail, Instagram, Twitter, Linkedin, ArrowRight } from 'lucide-react';
+import { Mail, Instagram, Linkedin, ArrowRight } from 'lucide-react';
 
 export default function Contact() {
   return (
@@ -21,10 +21,16 @@ export default function Contact() {
           </p>
           
           <div className="flex gap-6">
-            {[Instagram, Twitter, Linkedin, Mail].map((Icon, idx) => (
+            {[
+              { Icon: Instagram, href: "https://www.instagram.com/pranav__kakkar__/" },
+              { Icon: Linkedin, href: "https://www.linkedin.com/in/pranav-kakkar-6856373b8/?skipRedirect=true" },
+              { Icon: Mail, href: "mailto:kakkarpranav80@gmail.com" }
+            ].map(({ Icon, href }, idx) => (
               <a 
                 key={idx} 
-                href="#" 
+                href={href} 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-16 h-16 border-2 border-black rounded-full flex items-center justify-center hover:bg-black hover:text-white transition-all transform hover:-rotate-12"
               >
                 <Icon size={24} />

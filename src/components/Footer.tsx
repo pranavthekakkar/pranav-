@@ -8,16 +8,19 @@ export default function Footer() {
 
       <div className="flex items-center space-x-4">
         {[
-          { label: 'IG', href: '#' },
-          { label: 'TW', href: '#' },
-          { label: 'BE', href: '#' }
+          { label: 'IG', href: 'https://www.instagram.com/pranav__kakkar__/' },
+          { label: 'LI', href: 'https://www.linkedin.com/in/pranav-kakkar-6856373b8/?skipRedirect=true' },
+          { label: 'ML', href: 'mailto:kakkarpranav80@gmail.com' }
         ].map((social) => (
-          <div 
+          <a 
             key={social.label}
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-12 h-12 rounded-full border border-zinc-700 flex items-center justify-center hover:bg-white hover:text-black transition-all cursor-pointer group"
           >
             <span className="text-[10px] font-bold group-hover:scale-110 transition-transform">{social.label}</span>
-          </div>
+          </a>
         ))}
       </div>
     </footer>
